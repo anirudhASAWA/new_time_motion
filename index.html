@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time and Motion Study Tool</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+  <div class="container mx-auto p-4">
+    <header class="mb-6">
+      <h1 class="text-3xl font-bold text-center mb-2">Time and Motion Study Tool</h1>
+      <p class="text-center text-gray-600">Track and analyze process duration for industrial engineering studies</p>
+    </header>
+
+    <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+      <div class="mb-4">
+        <label for="projectName" class="block mb-2 font-medium">Project Name:</label>
+        <input 
+          type="text" 
+          id="projectName" 
+          class="w-full p-2 border rounded" 
+          placeholder="Enter project name"
+        >
+      </div>
+      
+      <div class="mb-6">
+        <label for="columnCount" class="block mb-2 font-medium">Number of Process Steps:</label>
+        <input 
+          type="number" 
+          id="columnCount" 
+          class="w-full p-2 border rounded" 
+          min="1" 
+          max="20" 
+          placeholder="Enter number of process steps"
+        >
+      </div>
+    </div>
+    
+    <div id="actionPanel" class="bg-white p-6 rounded-lg shadow-md mb-6 hidden">
+      <div class="flex justify-between mb-4">
+        <button id="addRowBtn" class="btn-primary">Add Task</button>
+        <div>
+          <button id="saveProjectBtn" class="btn-secondary mr-2">Save Project</button>
+          <button id="exportBtn" class="btn-secondary">Export to Excel</button>
+        </div>
+      </div>
+      
+      <div id="tableContainer" class="overflow-x-auto mt-4">
+        <!-- Table will be rendered here -->
+      </div>
+    </div>
+    
+    <div id="statusMessage" class="hidden p-4 rounded-lg mb-4"></div>
+  </div>
+
+  <footer class="mt-8 text-center text-gray-600 text-sm p-4">
+    <p>Time and Motion Study Tool - &copy; 2025</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
